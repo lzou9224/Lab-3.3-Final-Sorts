@@ -9,28 +9,15 @@ public class ArrayMethods3 {
 	public static void main(String[] args)
 	{
 		//testing arrays
-		String[] test1 = {"apple", "cucumber", "microsoft", "zorro"};
-		String[] test2 = {"banana", "cherry", "mahogany", "oreos", "pinata"};
-		int[] test3 = {3,4,2,7,1};
+		String[] test1 = {"apple", "cucumber", "microsoft", "zorro", "loboster"};
+		int[] test2 = {3,4,2,7,1};
+		
 
-		
-		//mergeSort test
-		long start= System.nanoTime();
-		String[] mergeResult= merge(test1, test2);
-		long end= System.nanoTime();
-		long time = end - start;
-		System.out.println("MergeSort test took : " + time + " nanoseconds");
-		System.out.println(Arrays.toString(mergeResult));
-		
-		//partitionSort test
-		start = System.nanoTime();
-		int pivotFinalPos = partitionResult(test3);
-		end = System.nanoTime();
-		time = end - start;
-		System.out.println("Partition test took : " + time + " nanoseconds");
-		System.out.println("Final Pivot Position: " + pivotFinalPos); 
-		System.out.println(Arrays.toString(partitionResult));
-		
+		System.out.println(Arrays.toString(mergeSort(test1)));
+		quickSort(test2, 0, test2.length-1);
+
+		System.out.print(Arrays.toString(test2));
+	}
 	
 	public static String[] merge(String[] list1, String[] list2)
 	{
